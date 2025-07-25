@@ -1,0 +1,1 @@
+# These are all exercises related to arrays
