@@ -25,7 +25,6 @@ int option, n, x, y; // Declarations of variables need to determine user choices
 // Start of the main function
 int main() {
 
-    do {
         // Welcome message and a description of our program
         printf("\nWelcome to our Simple Calculator 🧮🖩\n\n");
         printf("Here is a list of things our calculator can do.\nKey in a number based on the list below to get started.\n");
@@ -36,12 +35,18 @@ int main() {
         printf("5. Square of an integer.\n");
         printf("6. Cube of an integer.\n");
         printf("7. Remainder of a division.\n");
-        printf("8. Average of n numbers.\n\n");
+        printf("8. Average of n numbers.\n");
+        printf("0. Quit.\n\n");
         
         scanf("%d", &option); // Records the option selected by the user
 
         // Base on the user option selected, the case is handled differently
         switch(option) {
+
+            case 0:
+                printf("\nThank you for using our Simple Calculator.\n");
+                break;
+
             case 1: // User selects the add function
                 printf("\nHow many numbers do you want to add: ");
                 scanf("%d", &n); // Collects the number of elements use plans to add
@@ -99,12 +104,11 @@ int main() {
 
             default: // In case user selects an option that is not on the list
                 printf("\nPlease enter a valid option\n");
-        }
+                main();
+                break;
 
     }
 
-    // This loop runs again if user picks an option that is not between 1 and 8
-    while (option != 1 || option != 2 || option != 3 || option != 4 || option != 5 || option != 6 || option != 7 || option != 8);
 
     return 0;
 }
@@ -128,7 +132,7 @@ int add(int n) {
         sum += arr[i]; // Calculates the sum
     }
 
-    printf("\nThe sum of all the numbers is: %d\n", sum); // Print the sum
+    printf("\nThe sum➕ of all the numbers is: %d\n", sum); // Print the sum
 
     return sum;
 }
@@ -138,7 +142,7 @@ int add(int n) {
 int subtract(int x, int y) {
     int diff; //Declare a variable, diff, to hold the value of the difference of both numbers
     diff = x - y; // Define diff
-    printf("\nThe difference between %d and %d is: %d\n", x, y, diff); // Print the difference of both numbers
+    printf("\nThe difference➖ between %d and %d is: %d\n", x, y, diff); // Print the difference of both numbers
     return diff;
 }
 // End of subtract function
@@ -159,7 +163,7 @@ int multiply(int n) {
         pdt *= arr[i]; // Calculates the product
     }
 
-    printf("\nThe product of all the numbers is: %d\n", pdt); // Print the product
+    printf("\nThe product✖️ of all the numbers is: %d\n", pdt); // Print the product
     return pdt;
 }
 // End of multiply function
@@ -168,7 +172,7 @@ int multiply(int n) {
 float divide(int x, int y) {
     float div; //Declare a variable, div, to hold the value of the division of both numbers
     div = x / y; // Define div
-    printf("\nThe difference between %d and %d is: %.3f\n", x, y, div); // Print the result of the division of both numbers to 3 decimal places
+    printf("\nThe division➗ between %d and %d is: %.3f\n", x, y, div); // Print the result of the division of both numbers to 3 decimal places
     return div;
 }
 // End of divide function
@@ -177,7 +181,7 @@ float divide(int x, int y) {
 int square(int n) {
     int sqr; // Declare a variable, sqr, to hold the value of the square of the number n
     sqr = n * n; // Define sqr
-    printf("\nThe square of %d is: %d\n", n, sqr); // Print the square of the number n
+    printf("\nThe square🟦 of %d is: %d\n", n, sqr); // Print the square of the number n
     return sqr;
 }
 // End of square function
@@ -186,7 +190,7 @@ int square(int n) {
 int cube(int n) {
     int cube; // Declare a variable, cube, to hold the value of the cube of the number n
     cube = n * n * n; // Define cube
-    printf("\nThe cube of %d is: %d\n", n, cube); // Print the cube of the number n
+    printf("\nThe cube🧊 of %d is: %d\n", n, cube); // Print the cube of the number n
     return cube;
 }
 // End of cube function
@@ -195,7 +199,7 @@ int cube(int n) {
 int remain(int x, int y) {
     int mod; // Declare a variable, mod, to hold the value remainder after division 
     mod = x % y; // Define mod
-    printf("\nThe remainder of the division between %d and %d is: %d\n", x, y, mod); // Print the remainder after division
+    printf("\nThe remainder🌒 of the division between %d and %d is: %d\n", x, y, mod); // Print the remainder after division
     return mod;
 }
 // End of remainder function
@@ -219,7 +223,7 @@ float average(int n) {
 
     avg = sum / n; // Define avg
 
-    printf("\nThe sum of all the numbers is: %.3f\n", avg); // Print the average to 3 decimal places
+    printf("\nThe average⚖️ of all the numbers is: %.3f\n", avg); // Print the average to 3 decimal places
     return avg;
 }
 // End of the average function
